@@ -13,10 +13,37 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    
+    var carsArray: [Car] = []
+    
+    func createLine(model: String, clas: String, manufacturer: String, type: String, year: Int16){
+        let context = persistentContainer.viewContext
+        let cars = Car(context: context)
+        cars.name = name
+        cars.model = model
+        cars.clas = clas
+        cars.manufacturer = manufacturer
+        cars.type = type
+        cars.year = year
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        do {
+            carsArray = try persistentContainer.viewContext.fetch(Car.fetchRequest())
+        } catch {
+            print("Fetching Failed")
+        }
+        
+        if carsArray.isEmpty{
+            createLine(model: "Explorer", clas: "C", manufacturer: "Ford", type: "Легковой", year: 2015)
+            createLine(model: "HiAce", clas: "A", manufacturer: "Toyota", type: "Микроавтобус", year: 2014)
+            createLine(model: "Jazz", clas: "D", manufacturer: "Honda", type: "Легковой", year: 2008)
+        }
+        self.saveContext()
+        
         return true
     }
 
