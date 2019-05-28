@@ -18,28 +18,28 @@ class ViewController: UIViewController {
     
     
     @IBAction func addNewCar(_ sender: Any) {
-        let alert = UIAlertController(title: "New Car", message: "Add a new car", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Новая машина", message: "Заполните все поля", preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: { (nameTextField) in
-            nameTextField.placeholder = "Name"
+            nameTextField.placeholder = "Имя"
         })
         alert.addTextField(configurationHandler: { (manufacturerTextField) in
-            manufacturerTextField.placeholder = "Manufacturer"
+            manufacturerTextField.placeholder = "Производитель"
         })
         alert.addTextField(configurationHandler: { (modelTextField) in
-            modelTextField.placeholder = "Model"
+            modelTextField.placeholder = "Модель"
         })
         alert.addTextField(configurationHandler: { (clasTextField) in
-            clasTextField.placeholder = "Clas"
+            clasTextField.placeholder = "Класс"
         })
         alert.addTextField(configurationHandler: { (typeTextField) in
-            typeTextField.placeholder = "Type"
+            typeTextField.placeholder = "Тип"
         })
         alert.addTextField(configurationHandler: { (yearTextField) in
-            yearTextField.placeholder = "Year"
+            yearTextField.placeholder = "Год выпуска"
         })
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+        let saveAction = UIAlertAction(title: "Сохранить", style: .default) { [unowned self] action in
             
             guard let nameTextField = alert.textFields?[0],
                 let nameSave = nameTextField.text
@@ -71,11 +71,12 @@ class ViewController: UIViewController {
                 else {
                     return
             }
+            // saving data
             self.save(name: nameSave, manufacturer: manufacturerSave, model: modelSave, clas: clasSave, type: typeSave, year: Int16(yearSave)!)
             self.carsTableView.reloadData()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default)
         
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
@@ -125,6 +126,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         fetchCars()
     }
     
@@ -188,43 +190,44 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: nil)
         cell.textLabel?.text = cars[indexPath.row].name
+        
         cell.detailTextLabel?.text = String("\(cars[indexPath.row].manufacturer!), \(cars[indexPath.row].model!), \(cars[indexPath.row].clas!), \(cars[indexPath.row].type!), \(String(cars[indexPath.row].year))")
         
         return cell
     }
-    
+    // when user tap on a row — pop-up updating/deleting alert
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let car = cars[indexPath.row]
-        let alert = UIAlertController(title: "Update Car", message: "Update Car", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Изменить данные", message: "Заполните все поля", preferredStyle: .alert)
         
         
         alert.addTextField(configurationHandler: { (nameTextField) in
-            nameTextField.placeholder = "Name"
+            nameTextField.placeholder = "Имя"
             nameTextField.text = car.value(forKey: "Name") as? String
         })
         alert.addTextField(configurationHandler: { (manufacturerTextField) in
-            manufacturerTextField.placeholder = "Manufacturer"
+            manufacturerTextField.placeholder = "Производитель"
             manufacturerTextField.text = car.value(forKey: "Manufacturer") as? String
         })
         alert.addTextField(configurationHandler: { (modelTextField) in
-            modelTextField.placeholder = "Model"
+            modelTextField.placeholder = "Модель"
             modelTextField.text = car.value(forKey: "Model") as? String
         })
-        alert.addTextField(configurationHandler: { (yearTextField) in
-            yearTextField.placeholder = "Year"
-            yearTextField.text = "\(car.value(forKey: "Year") as? Int16 ?? 0)"
-        })
         alert.addTextField(configurationHandler: { (clasTextField) in
-            clasTextField.placeholder = "Clas"
+            clasTextField.placeholder = "Класс"
             clasTextField.text = car.value(forKey: "Clas") as? String
         })
         alert.addTextField(configurationHandler: { (typeTextField) in
-            typeTextField.placeholder = "Type"
+            typeTextField.placeholder = "Тип"
             typeTextField.text = car.value(forKey: "Type") as? String
         })
+        alert.addTextField(configurationHandler: { (yearTextField) in
+            yearTextField.placeholder = "Год выпуска"
+            yearTextField.text = "\(car.value(forKey: "Year") as? Int16 ?? 0)"
+        })
         
-        let updateAction = UIAlertAction(title: "Update", style: .default) { [unowned self] action in
+        let updateAction = UIAlertAction(title: "Изменить", style: .default) { [unowned self] action in
             
             guard let nameTextField = alert.textFields?[0],
                 let nameSave = nameTextField.text
@@ -250,14 +253,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             self.carsTableView.reloadData()
         }
         
-        let deleteAction = UIAlertAction(title: "Delete", style: .default) { [unowned self] action in
+        let deleteAction = UIAlertAction(title: "Удалить", style: .default) { [unowned self] action in
             
             self.delete(car: car)
             self.cars.remove(at: (self.cars.firstIndex(of: car))!)
             self.carsTableView.reloadData()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
+        let cancelAction = UIAlertAction(title: "Отмена", style: .default)
         
         alert.addAction(updateAction)
         alert.addAction(deleteAction)

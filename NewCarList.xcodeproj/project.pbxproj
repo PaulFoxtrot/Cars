@@ -15,6 +15,7 @@
 		D85AC32E229C32590082E01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85AC32C229C32590082E01A /* LaunchScreen.storyboard */; };
 		D85AC33B229C54D30082E01A /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AC339229C54D30082E01A /* Car+CoreDataClass.swift */; };
 		D85AC33C229C54D30082E01A /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AC33A229C54D30082E01A /* Car+CoreDataProperties.swift */; };
+		D8EDB996229D98FC00D74E5F /* PreloadedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8EDB995229D98FC00D74E5F /* PreloadedData.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D85AC32F229C32590082E01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D85AC339229C54D30082E01A /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D85AC33A229C54D30082E01A /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D8EDB995229D98FC00D74E5F /* PreloadedData.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PreloadedData.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		D85AC314229C32580082E01A = {
 			isa = PBXGroup;
 			children = (
+				D8EDB995229D98FC00D74E5F /* PreloadedData.plist */,
 				D85AC31F229C32580082E01A /* NewCarList */,
 				D85AC31E229C32580082E01A /* Products */,
 			);
@@ -134,6 +137,7 @@
 				D85AC32E229C32590082E01A /* LaunchScreen.storyboard in Resources */,
 				D85AC32B229C32590082E01A /* Assets.xcassets in Resources */,
 				D85AC326229C32580082E01A /* Main.storyboard in Resources */,
+				D8EDB996229D98FC00D74E5F /* PreloadedData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
