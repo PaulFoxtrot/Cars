@@ -13,6 +13,8 @@
 		D85AC329229C32580082E01A /* NewCarList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D85AC327229C32580082E01A /* NewCarList.xcdatamodeld */; };
 		D85AC32B229C32590082E01A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85AC32A229C32590082E01A /* Assets.xcassets */; };
 		D85AC32E229C32590082E01A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D85AC32C229C32590082E01A /* LaunchScreen.storyboard */; };
+		D85AC33B229C54D30082E01A /* Car+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AC339229C54D30082E01A /* Car+CoreDataClass.swift */; };
+		D85AC33C229C54D30082E01A /* Car+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85AC33A229C54D30082E01A /* Car+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		D85AC32A229C32590082E01A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D85AC32D229C32590082E01A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D85AC32F229C32590082E01A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85AC339229C54D30082E01A /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D85AC33A229C54D30082E01A /* Car+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		D85AC31F229C32580082E01A /* NewCarList */ = {
 			isa = PBXGroup;
 			children = (
+				D85AC339229C54D30082E01A /* Car+CoreDataClass.swift */,
+				D85AC33A229C54D30082E01A /* Car+CoreDataProperties.swift */,
 				D85AC320229C32580082E01A /* AppDelegate.swift */,
 				D85AC322229C32580082E01A /* ViewController.swift */,
 				D85AC324229C32580082E01A /* Main.storyboard */,
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85AC33B229C54D30082E01A /* Car+CoreDataClass.swift in Sources */,
+				D85AC33C229C54D30082E01A /* Car+CoreDataProperties.swift in Sources */,
 				D85AC329229C32580082E01A /* NewCarList.xcdatamodeld in Sources */,
 				D85AC323229C32580082E01A /* ViewController.swift in Sources */,
 				D85AC321229C32580082E01A /* AppDelegate.swift in Sources */,
